@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Luiz Amadeu Coutinho – 3D Geospatial CV</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <!-- ArcGIS -->
+  <link rel="stylesheet"
+        href="https://js.arcgis.com/4.29/esri/themes/dark/main.css"/>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+<!-- SPLASH (idêntico ao atual) -->
+<div id="splash">
+  <div class="splash-content">
+    <img src="assets/Picture1.jpg" class="profile-img"
+         onerror="this.style.display='none'">
+    <h1>Luiz Amadeu Coutinho</h1>
+    <p class="splash-text">
+      GIS Consultant with over 20 years of experience delivering ArcGIS-based
+      solutions for public and private sector organisations.
+    </p>
+    <button class="explore-btn" onclick="closeSplash()">
+      Explore My Career Portfolio
+    </button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+  <div><b>Luiz Amadeu Coutinho</b> | GeoBIM Director</div>
+  <div class="header-links">
+    <a href="assets/Luiz_Amadeu_Coutinho_CV.pdf" download>CV (PDF)</a>
+    <a href="https://www.linkedin.com/in/luizamadeucoutinho/" target="_blank">
+      LinkedIn
+    </a>
+  </div>
+</header>
+
+<!-- APP -->
+<div id="app">
+  <aside id="sidebar">
+    <!-- sidebar completo exatamente como hoje -->
+    <div class="panel">
+      <button id="tourBtn">▶ Play Auto Tour</button>
+      <button id="resetBtn">Reset View</button>
+
+      <label>Filter by Country</label>
+      <select id="countryFilter">
+        <option value="ALL">All Regions</option>
+      </select>
+
+      <label>Career Level</label>
+      <select id="phaseFilter">
+        <option value="ALL">All Levels</option>
+        <option>Leadership</option>
+        <option>Consultant</option>
+        <option>Technical</option>
+        <option>Academic</option>
+      </select>
+    </div>
+
+    <div id="list"></div>
+  </aside>
+
+  <main id="viewDiv"></main>
+</div>
+
+<!-- ArcGIS API -->
+<script src="https://js.arcgis.com/4.29/"></script>
+
+<!-- APP LOGIC -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
