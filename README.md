@@ -110,7 +110,7 @@ GeoJSON
 ###### 🗂️ GeoJSON Schema (data/career.geojson)
 
 Each feature follows this structure:
-```
+```bash
 {
   "type": "Feature",
   "geometry": {
