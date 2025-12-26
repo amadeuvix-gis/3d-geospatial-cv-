@@ -50,10 +50,10 @@ Each experience is spatially anchored and enriched with:
 │
 ├── index.html                       # Minimal HTML shell
 └── README.md                        # Project documentation
-
+```text
 #### 🚀 Features
 
-```text
+
 
 Core GIS & 3D
 
@@ -110,6 +110,7 @@ GeoJSON
 ###### 🗂️ GeoJSON Schema (data/career.geojson)
 
 Each feature follows this structure:
+```
 {
   "type": "Feature",
   "geometry": {
@@ -128,6 +129,7 @@ Each feature follows this structure:
     "stack": "Comma-separated list of technologies"
   }
 }
+```
 ```text
 You can:
 
