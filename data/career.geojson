@@ -7,8 +7,8 @@
       "geometry": { "type": "Point", "coordinates": [-43.9378, -19.9167] },
       "properties": {
         "order": 1,
-        "company": "LEAD Tecnologia",
-        "career_phase": "Technical",
+        "company": "Confidential",
+        "career_phase": "Consultant",
         "role": "Freelance GIS/BIM Analyst",
         "city": "Belo Horizonte",
         "country": "Brazil",
@@ -23,7 +23,7 @@
       "geometry": { "type": "Point", "coordinates": [-81.5447, 28.5421] },
       "properties": {
         "order": 2,
-        "company": "TransformXD",
+        "company": "Confidential",
         "career_phase": "Consultant",
         "role": "Freelance GIS/BIM Analyst",
         "city": "Florida",
@@ -55,7 +55,7 @@
       "geometry": { "type": "Point", "coordinates": [-9.0981, 38.7847] },
       "properties": {
         "order": 4,
-        "company": "ESRI Portugal",
+        "company": "Confidential",
         "career_phase": "Consultant",
         "role": "Freelance GIS/BIM Consultant",
         "city": "Lisbon",
@@ -71,8 +71,8 @@
       "geometry": { "type": "Point", "coordinates": [-9.3629, 38.8232] },
       "properties": {
         "order": 5,
-        "company": "novEGT",
-        "career_phase": "Consultant",
+        "company": "Confidential",
+        "career_phase": "Technical",
         "role": "Freelance GIS Consultant",
         "city": "Sintra",
         "country": "Portugal",
@@ -88,7 +88,7 @@
       "properties": {
         "order": 6,
         "company": "University of Lisbon (FCUL)",
-        "career_phase": "Academic",
+        "career_phase": "Technical",
         "role": "Researcher & Senior Technician",
         "city": "Lisbon",
         "country": "Portugal",
@@ -260,4 +260,5 @@
 
   ]
 }
+
 
