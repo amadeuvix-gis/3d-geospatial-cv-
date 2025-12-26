@@ -1,29 +1,33 @@
-3D Geospatial CV – Luiz Amadeu Coutinho
+# 3D Geospatial CV – Luiz Amadeu Coutinho
 
-An interactive 3D Geospatial Curriculum Vitae built with ArcGIS Maps SDK for JavaScript (4.x), combining spatial storytelling, globe navigation, and professional experience visualization.
+An interactive **3D Geospatial Curriculum Vitae** built with **ArcGIS Maps SDK for JavaScript (4.x)**, combining spatial storytelling, globe navigation, and professional experience visualization.
 
-This project showcases advanced usage of 3D GIS, GeoJSON-driven content, and cinematic camera transitions, designed as both a personal portfolio and a technical reference.
+This project showcases advanced usage of **3D GIS**, **GeoJSON-driven content**, and **cinematic camera transitions**, designed as both a **personal portfolio** and a **technical reference**.
 
-🌍 Live Demo
+---
 
-🔗 Live version (GitHub Pages):
-https://SEU_USUARIO.github.io/3d-geospatial-cv/
+## 🌍 Live Demo
 
-🎯 Project Concept
+> 🔗 **Live version (GitHub Pages):**  
+> https://SEU_USUARIO.github.io/3d-geospatial-cv/
 
-The application presents a global-to-local career journey, guiding the viewer through:
+---
 
-🌐 Global overview (rotating globe)
+## 🎯 Project Concept
 
-🌍 Country-level focus
+The application presents a **global-to-local career journey**, guiding the viewer through:
 
-🏙️ City-level context
-
-📍 Individual professional experiences
+1. 🌐 Global overview (rotating globe)  
+2. 🌍 Country-level focus  
+3. 🏙️ City-level context  
+4. 📍 Individual professional experiences  
 
 Each experience is spatially anchored and enriched with descriptive content, technology stack, and visual cues.
 
-📁 Project Structure
+---
+
+## 📁 Project Structure
+
 3d-geospatial-cv/
 │
 ├── index.html                # Minimal HTML shell
@@ -43,184 +47,85 @@ Each experience is spatially anchored and enriched with descriptive content, tec
 │
 └── README.md
 
-🚀 Features
-🗺️ GIS & 3D
+---
 
-ArcGIS SceneView with dark-gray-3d basemap
+## 🚀 Features
 
-3D point symbols with callouts and vertical offsets
+### 🗺️ GIS & 3D
+- ArcGIS **SceneView** with `dark-gray-3d` basemap
+- 3D point symbols with callouts and vertical offsets
+- Career phase–based symbology
+- 3D text labeling
 
-Career phase–based symbology
+### 🎥 Storytelling & Navigation
+- Automatic cinematic tour (Play / Stop)
+- Smooth `goTo()` camera transitions
+- Global auto-rotation (idle mode)
+- Reset view to globe overview
 
-3D text labeling
+### 🧭 UI / UX
+- Splash screen introduction
+- Left-side synchronized experience list
+- Active highlight synchronization (map ↔ list)
+- Filters by country and career phase
+- Docked, rich-content popup
+- Download CV (PDF) and LinkedIn links
 
-🎥 Storytelling & Navigation
+### 🧩 Data Design
+- External GeoJSON for easy customization
+- Ordered timeline using `order` attribute
+- Technology stack rendered as visual chips
+- Academic vs professional visual differentiation
 
-Automatic cinematic tour (Play / Stop)
+---
 
-Smooth goTo() camera transitions
+## 🧱 Technology Stack
 
-Global auto-rotation (idle mode)
+- ArcGIS Maps SDK for JavaScript 4.29
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- GeoJSON
 
-Reset view to globe overview
+---
 
-🧭 UI / UX
-
-Splash screen introduction
-
-Left-side synchronized experience list
-
-Active highlight synchronization (map ↔ list)
-
-Filters by country and career phase
-
-Docked, rich-content popup
-
-Download CV (PDF) and LinkedIn links
-
-🧩 Data Design
-
-External GeoJSON for easy customization
-
-Ordered timeline using order attribute
-
-Technology stack rendered as visual chips
-
-Academic vs professional visual differentiation
-
-🧱 Technology Stack
-
-ArcGIS Maps SDK for JavaScript 4.29
-
-HTML5
-
-CSS3
-
-Vanilla JavaScript
-
-GeoJSON
-
-No frameworks, no build tools — fully static and portable.
-
-🗂️ GeoJSON Schema
-
-File: data/career.geojson
-
-{
-  "type": "Feature",
-  "geometry": {
-    "type": "Point",
-    "coordinates": [longitude, latitude]
-  },
-  "properties": {
-    "order": 1,
-    "company": "Company Name",
-    "role": "Role Title",
-    "career_phase": "Leadership | Consultant | Technical | Academic",
-    "city": "City",
-    "country": "Country",
-    "period": "Date range",
-    "description": "Detailed role description",
-    "stack": "Comma-separated list of technologies"
-  }
-}
-
-
-You can:
-
-Add new roles
-
-Reorder experiences
-
-Adapt the content to your own CV or portfolio
-
-▶️ How to Run Locally
+## ▶️ How to Run Locally
 
 Because the app loads external files (GeoJSON), it must be served via a local web server.
 
-Option 1 — Python
-python -m http.server 8000
+### Option 1 — Python
 
+python -m http.server 8000
 
 Open:
 
 http://localhost:8000
 
-Option 2 — VS Code
+### Option 2 — VS Code
 
-Install Live Server
+- Install Live Server
+- Right-click index.html → Open with Live Server
 
-Right-click index.html → Open with Live Server
+---
 
-🌐 Deploy on GitHub Pages
+## 🌐 Deploy on GitHub Pages
 
-Push the repository to GitHub
-
-Go to Settings → Pages
-
-Select:
-
-Branch: main
-
-Folder: / (root)
-
-Save and wait a few seconds
+1. Push the repository to GitHub  
+2. Go to Settings → Pages  
+3. Select:
+   - Branch: main  
+   - Folder: / (root)  
+4. Save and wait a few seconds  
 
 Your site will be available at:
 
 https://SEU_USUARIO.github.io/3d-geospatial-cv/
 
-🎨 Customization Guide
-Personal Info
+---
 
-Header and splash text → index.html
+## 👤 Author
 
-Profile image → assets/Picture1.jpg
-
-CV PDF → assets/Luiz_Amadeu_Coutinho_CV.pdf
-
-Styling
-
-Edit css/style.css
-
-No inline CSS is used
-
-Data
-
-Edit data/career.geojson
-
-No code changes required
-
-🧠 Design Principles
-
-Zero regression philosophy
-Visual and functional consistency preserved during refactors.
-
-Data-driven UI
-All experience content lives in GeoJSON.
-
-Framework-free architecture
-Clear, readable, and easy to replicate.
-
-📄 License
-
-This project is provided for portfolio and educational purposes.
-
-If you reuse or adapt it, attribution is appreciated.
-
-👤 Author
-
-Luiz Amadeu Coutinho
-GeoBIM & Geospatial Consultant
+**Luiz Amadeu Coutinho**  
+GeoBIM & Geospatial Consultant  
 
 LinkedIn: https://www.linkedin.com/in/luizamadeucoutinho/
-
-⭐ Final Note
-
-This project is both:
-
-A professional 3D CV
-
-A technical demonstration of advanced ArcGIS JavaScript capabilities
-
-Ideal for GIS professionals, GeoBIM consultants, and anyone exploring spatial storytelling and digital twin concepts.
