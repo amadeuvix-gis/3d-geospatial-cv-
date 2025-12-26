@@ -1,0 +1,262 @@
+
+  "type": "FeatureCollection",
+  "features": [
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-43.9378, -19.9167] },
+      "properties": {
+        "order": 1,
+        "company": "LEAD Tecnologia",
+        "career_phase": "Technical",
+        "role": "Freelance GIS/BIM Analyst",
+        "city": "Belo Horizonte",
+        "country": "Brazil",
+        "period": "Oct 2025 – Present",
+        "description": "Design and delivery of GeoBIM MVPs and proof-of-concepts focused on infrastructure and asset visualization. Development of 360° imagery web applications and integration of LiDAR data into GIS workflows, supporting technical validation and client decision-making.",
+        "stack": "ArcGIS Online, Experience Builder, Oriented Imagery, LiDAR, Dashboards"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-81.5447, 28.5421] },
+      "properties": {
+        "order": 2,
+        "company": "TransformXD",
+        "career_phase": "Consultant",
+        "role": "Freelance GIS/BIM Analyst",
+        "city": "Florida",
+        "country": "USA",
+        "period": "Aug 2025 – Present",
+        "description": "Processing and quality control of Reality Capture datasets, including LiDAR point clouds and orthophotos. Responsible for ArcGIS Online content management and acting as technical liaison with Esri as part of the company partnership program.",
+        "stack": "ArcGIS Online, ArcGIS Maps SDK for JavaScript, LiDAR, Reality Capture"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6364, -23.5462] },
+      "properties": {
+        "order": 3,
+        "company": "SMART SKY TECH HUB",
+        "career_phase": "Leadership",
+        "role": "GeoBIM Director",
+        "city": "São Paulo",
+        "country": "Brazil",
+        "period": "2022 – 2025",
+        "description": "Leadership of multidisciplinary GIS and BIM teams delivering GeoBIM solutions for government clients. Responsible for ArcGIS Enterprise administration, publication of Reality Capture datasets, and strategic guidance on 3D and digital twin initiatives.",
+        "stack": "ArcGIS Enterprise, GeoBIM, Reality Capture, Digital Twins, Team Leadership"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.0981, 38.7847] },
+      "properties": {
+        "order": 4,
+        "company": "ESRI Portugal",
+        "career_phase": "Consultant",
+        "role": "Freelance GIS/BIM Consultant",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "period": "2021 – 2022",
+        "description": "Specialist support for 3D city modeling and CAD-to-BIM conversion workflows. Delivered GeoBIM solutions for utilities projects, integrating Revit models with ArcGIS Pro and web-based GIS platforms.",
+        "stack": "CityEngine, Revit, ArcGIS Pro, GeoBIM"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.3629, 38.8232] },
+      "properties": {
+        "order": 5,
+        "company": "novEGT",
+        "career_phase": "Consultant",
+        "role": "Freelance GIS Consultant",
+        "city": "Sintra",
+        "country": "Portugal",
+        "period": "2020",
+        "description": "Modeling and analysis of Obstacle Limitation Surfaces in compliance with ICAO standards. Supported airport safety assessments using advanced 3D GIS and aviation-specific analytical tools.",
+        "stack": "ArcGIS Aviation, 3D Analyst, LiDAR, ICAO Standards"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.1554, 38.7565] },
+      "properties": {
+        "order": 6,
+        "company": "University of Lisbon (FCUL)",
+        "career_phase": "Academic",
+        "role": "Researcher & Senior Technician",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "period": "2017 – 2022",
+        "description": "Technical lead for the SMARTCAMPUS GIS portal, providing spatial data services and analytical support to academic units. Performed administration of ArcGIS Enterprise in a Linux environment and supported 3D and CityEngine-based workflows.",
+        "stack": "ArcGIS Enterprise (Linux), PostgreSQL, CityEngine, CGA Rules"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [13.2212, -8.8202] },
+      "properties": {
+        "order": 7,
+        "company": "Sinfic – ESRI Angola",
+        "career_phase": "Consultant",
+        "role": "GIS Consultant & Instructor",
+        "city": "Luanda",
+        "country": "Angola",
+        "period": "2010 – 2014",
+        "description": "Official Esri instructor delivering certified training programs. Designed and implemented GIS solutions for Oil & Gas clients, including workflow automation and custom scripting using Python.",
+        "stack": "ArcGIS Server, Python, ENVI, SQL Server, Training Delivery"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.1548, 38.7314] },
+      "properties": {
+        "order": 8,
+        "company": "Primesoft",
+        "career_phase": "Technical",
+        "role": "GIS Specialist",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "period": "2009 – 2010",
+        "description": "Execution of spatial analyses and large-scale data conversions to support reporting and operational GIS systems using ArcGIS Desktop.",
+        "stack": "ArcGIS Desktop, Spatial Analysis, Data Conversion"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.3104, 38.7126] },
+      "properties": {
+        "order": 9,
+        "company": "Grupo CME",
+        "career_phase": "Technical",
+        "role": "CAD-GIS Technician",
+        "city": "Porto Salvo",
+        "country": "Portugal",
+        "period": "2009",
+        "description": "Performed GIS data inventory and CAD-to-GIS conversion, ensuring strict topological validation and metadata consistency across enterprise datasets.",
+        "stack": "CAD to GIS, Topology, Metadata, AutoCAD"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.2312, 38.7118] },
+      "properties": {
+        "order": 10,
+        "company": "3D Cities",
+        "career_phase": "Technical",
+        "role": "GIS Technician",
+        "city": "Linda-a-Velha",
+        "country": "Portugal",
+        "period": "2007 – 2008",
+        "description": "Production of 3D urban visualizations and management of Web Map Services, supporting early web-based GIS and visualization platforms.",
+        "stack": "3D Visualization, ArcGIS Server, Web GIS"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-40.2925, -20.2915] },
+      "properties": {
+        "order": 11,
+        "company": "INFLOR",
+        "career_phase": "Technical",
+        "role": "GIS Specialist",
+        "city": "Vitória",
+        "country": "Brazil",
+        "period": "2004 – 2007",
+        "description": "Development of GIS solutions for land management and forestry operations, supporting planning, monitoring, and environmental analysis.",
+        "stack": "Web GIS, Forestry GIS, .NET, Spatial Analysis"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-40.3047, -20.2770] },
+      "properties": {
+        "order": 12,
+        "company": "LTC – UFES",
+        "career_phase": "Academic",
+        "role": "GIS Intern",
+        "city": "Vitória",
+        "country": "Brazil",
+        "period": "2000 – 2003",
+        "description": "Field data collection and environmental mapping using Trimble GPS equipment, supporting academic research and monitoring projects.",
+        "stack": "Trimble GPS, Cartography, Field Survey"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-9.1550, 38.7480] },
+      "properties": {
+        "order": 13,
+        "company": "Nova University of Lisbon",
+        "career_phase": "Academic",
+        "role": "Master’s Degree",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "period": "2010",
+        "description": "MSc in Territorial Management with specialization in Remote Sensing and Geographic Information Systems.",
+        "stack": "Remote Sensing, GIS, Spatial Analysis"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-46.6333, -23.5505] },
+      "properties": {
+        "order": 14,
+        "company": "IPOS Brazil",
+        "career_phase": "Academic",
+        "role": "Postgraduate Certificate – BIM",
+        "city": "São Paulo",
+        "country": "Brazil",
+        "period": "2023",
+        "description": "Postgraduate specialization in BIM projects for building construction, focusing on coordination, management, and integration with digital workflows.",
+        "stack": "BIM, Project Management, AEC Workflows"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [28.0473, -26.2041] },
+      "properties": {
+        "order": 15,
+        "company": "Esri South Africa",
+        "career_phase": "Academic",
+        "role": "ENVI Professional Training",
+        "city": "Johannesburg",
+        "country": "South Africa",
+        "period": "Professional Training",
+        "description": "Advanced professional training in image processing and remote sensing using ENVI and ArcGIS technologies.",
+        "stack": "ENVI, Remote Sensing, Image Processing"
+      }
+    },
+
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-6.2603, 53.3498] },
+      "properties": {
+        "order": 16,
+        "company": "CES Dublin",
+        "career_phase": "Academic",
+        "role": "Language Studies",
+        "city": "Dublin",
+        "country": "Ireland",
+        "period": "Language Study",
+        "description": "General English language program undertaken as part of international professional development.",
+        "stack": "English Language, Professional Development"
+      }
+    }
+
+  ]
+}
