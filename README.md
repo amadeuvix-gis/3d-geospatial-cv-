@@ -1,81 +1,72 @@
-# 3D Geospatial CV – Luiz Amadeu Coutinho
+3D Geospatial CV – Luiz Amadeu Coutinho
 
-Interactive **3D Geospatial Curriculum Vitae** built with **ArcGIS Maps SDK for JavaScript (4.x)**, combining storytelling, globe navigation, and professional experience visualization.
+An interactive 3D Geospatial Curriculum Vitae built with ArcGIS Maps SDK for JavaScript (4.x), combining spatial storytelling, globe navigation, and professional experience visualization.
 
-This project demonstrates advanced use of:
-- 3D SceneView
-- GeoJSON-driven data
-- Cinematic camera navigation
-- GeoBIM-oriented design
-- UI/UX patterns for spatial storytelling
+This project showcases advanced usage of 3D GIS, GeoJSON-driven content, and cinematic camera transitions, designed as both a personal portfolio and a technical reference.
 
----
+🌍 Live Demo
 
-## 🌍 Live Concept
+🔗 Live version (GitHub Pages):
+https://SEU_USUARIO.github.io/3d-geospatial-cv/
 
-The application presents a **global-to-local career tour**, guiding the viewer through:
-1. Globe-level overview
-2. Country focus
-3. City-level context
-4. Individual professional experiences
+🎯 Project Concept
 
-Each experience is spatially anchored and enriched with:
-- Role descriptions
-- Technology stack chips
-- Career phase classification
-- Visual callouts and highlights
+The application presents a global-to-local career journey, guiding the viewer through:
 
----
+🌐 Global overview (rotating globe)
 
-### 📁 Project Structure
+🌍 Country-level focus
 
-```text
+🏙️ City-level context
+
+📍 Individual professional experiences
+
+Each experience is spatially anchored and enriched with descriptive content, technology stack, and visual cues.
+
+📁 Project Structure
 3d-geospatial-cv/
 │
+├── index.html                # Minimal HTML shell
+│
 ├── assets/
-│   ├── Picture1.jpg                 # Profile image (splash screen)
-│   └── Luiz_Amadeu_Coutinho_CV.pdf   # Downloadable CV
+│   ├── Picture1.jpg          # Profile image (splash screen)
+│   └── Luiz_Amadeu_Coutinho_CV.pdf
 │
 ├── css/
-│   └── style.css                    # Full UI styling (extracted from original HTML)
-│
-├── data/
-│   └── career.geojson               # All professional experiences (editable)
+│   └── style.css             # Complete UI styling
 │
 ├── js/
-│   └── main.js                      # Application logic (SceneView, tour, filters)
+│   └── main.js               # Application logic (SceneView, tour, UI)
 │
-├── index.html                       # Minimal HTML shell
-└── README.md                        # Project documentation
+├── data/
+│   └── career.geojson        # Professional experiences (editable)
 │
-├── index.html                       # Minimal HTML shell
-└── README.md                        # Project documentation
-```text
-#### 🚀 Features
+└── README.md
 
-
-
-Core GIS & 3D
+🚀 Features
+🗺️ GIS & 3D
 
 ArcGIS SceneView with dark-gray-3d basemap
 
-3D callouts with vertical offsets
+3D point symbols with callouts and vertical offsets
 
 Career phase–based symbology
 
-Labeling using 3D text symbols
+3D text labeling
 
-Storytelling & Navigation
+🎥 Storytelling & Navigation
 
 Automatic cinematic tour (Play / Stop)
 
-Smooth goTo() transitions
+Smooth goTo() camera transitions
 
 Global auto-rotation (idle mode)
 
 Reset view to globe overview
 
-UI / UX
+🧭 UI / UX
+
+Splash screen introduction
 
 Left-side synchronized experience list
 
@@ -83,13 +74,13 @@ Active highlight synchronization (map ↔ list)
 
 Filters by country and career phase
 
-Docked popup with rich HTML content
+Docked, rich-content popup
 
-Splash screen intro
+Download CV (PDF) and LinkedIn links
 
-Data Design
+🧩 Data Design
 
-External GeoJSON for easy editing
+External GeoJSON for easy customization
 
 Ordered timeline using order attribute
 
@@ -97,20 +88,24 @@ Technology stack rendered as visual chips
 
 Academic vs professional visual differentiation
 
-##### 🧩 Technology Stack
-```text
+🧱 Technology Stack
+
 ArcGIS Maps SDK for JavaScript 4.29
 
-HTML5 / CSS3
+HTML5
 
-Vanilla JavaScript (no frameworks)
+CSS3
+
+Vanilla JavaScript
 
 GeoJSON
 
-###### 🗂️ GeoJSON Schema (data/career.geojson)
+No frameworks, no build tools — fully static and portable.
 
-Each feature follows this structure:
-```bash
+🗂️ GeoJSON Schema
+
+File: data/career.geojson
+
 {
   "type": "Feature",
   "geometry": {
@@ -129,69 +124,87 @@ Each feature follows this structure:
     "stack": "Comma-separated list of technologies"
   }
 }
-```
-```text
+
+
 You can:
 
-Add new experiences
+Add new roles
 
-Reorder the timeline
+Reorder experiences
 
-Adapt the content for your own CV or portfolio
+Adapt the content to your own CV or portfolio
 
-🛠️ How to Run Locally
+▶️ How to Run Locally
 
-Because the app loads external files (GeoJSON), you must run it via a local web server.
+Because the app loads external files (GeoJSON), it must be served via a local web server.
 
-Option 1 – Python
+Option 1 — Python
 python -m http.server 8000
 
 
-Then open:
+Open:
 
 http://localhost:8000
 
-Option 2 – VS Code
+Option 2 — VS Code
 
-Use Live Server extension.
+Install Live Server
+
+Right-click index.html → Open with Live Server
+
+🌐 Deploy on GitHub Pages
+
+Push the repository to GitHub
+
+Go to Settings → Pages
+
+Select:
+
+Branch: main
+
+Folder: / (root)
+
+Save and wait a few seconds
+
+Your site will be available at:
+
+https://SEU_USUARIO.github.io/3d-geospatial-cv/
 
 🎨 Customization Guide
-Change personal info
+Personal Info
 
-Header text → index.html
-
-Splash text → index.html
+Header and splash text → index.html
 
 Profile image → assets/Picture1.jpg
 
 CV PDF → assets/Luiz_Amadeu_Coutinho_CV.pdf
 
-Change styling
+Styling
 
 Edit css/style.css
 
 No inline CSS is used
 
-Change data
+Data
 
 Edit data/career.geojson
 
 No code changes required
 
-📌 Design Principles
+🧠 Design Principles
 
 Zero regression philosophy
-Visual, behavioral, and interaction consistency preserved during refactors.
+Visual and functional consistency preserved during refactors.
 
 Data-driven UI
 All experience content lives in GeoJSON.
 
-Framework-free
-Pure ArcGIS JS API + vanilla JS for maximum clarity and portability.
+Framework-free architecture
+Clear, readable, and easy to replicate.
 
 📄 License
 
-This project is released for portfolio and educational purposes.
+This project is provided for portfolio and educational purposes.
 
 If you reuse or adapt it, attribution is appreciated.
 
@@ -202,12 +215,12 @@ GeoBIM & Geospatial Consultant
 
 LinkedIn: https://www.linkedin.com/in/luizamadeucoutinho/
 
-Portfolio: (add if applicable)
-
 ⭐ Final Note
 
 This project is both:
 
-A professional CV
+A professional 3D CV
 
-A technical demonstration of advanced 3D GIS capabilities
+A technical demonstration of advanced ArcGIS JavaScript capabilities
+
+Ideal for GIS professionals, GeoBIM consultants, and anyone exploring spatial storytelling and digital twin concepts.
