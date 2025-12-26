@@ -45,6 +45,11 @@ Each experience is spatially anchored and enriched with:
 ├── js/
 │   └── main.js                      # Application logic (SceneView, tour, filters)
 │
+├── index.html                       # Minimal HTML shell
+└── README.md                        # Project documentation
+│
+├── index.html                       # Minimal HTML shell
+└── README.md                        # Project documentation
 
 🚀 Features
 Core GIS & 3D
@@ -102,7 +107,6 @@ GeoJSON
 🗂️ GeoJSON Schema (data/career.geojson)
 
 Each feature follows this structure:
-
 {
   "type": "Feature",
   "geometry": {
@@ -121,7 +125,6 @@ Each feature follows this structure:
     "stack": "Comma-separated list of technologies"
   }
 }
-
 
 You can:
 
@@ -203,13 +206,3 @@ This project is both:
 A professional CV
 
 A technical demonstration of advanced 3D GIS capabilities
-
-Ideal for:
-
-GIS / GeoBIM consultants
-
-ArcGIS JavaScript developers
-
-Digital Twin and spatial storytelling use cases
-├── index.html                       # Minimal HTML shell
-└── README.md                        # Project documentation
