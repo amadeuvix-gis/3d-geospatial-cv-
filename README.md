@@ -27,7 +27,7 @@ Each experience is spatially anchored and enriched with:
 
 ---
 
-## 📁 Project Structure
+### 📁 Project Structure
 
 ```text
 3d-geospatial-cv/
@@ -51,7 +51,7 @@ Each experience is spatially anchored and enriched with:
 ├── index.html                       # Minimal HTML shell
 └── README.md                        # Project documentation
 
-## 🚀 Features
+#### 🚀 Features
 
 ```text
 
@@ -97,7 +97,7 @@ Technology stack rendered as visual chips
 
 Academic vs professional visual differentiation
 
-## 🧩 Technology Stack
+##### 🧩 Technology Stack
 ```text
 ArcGIS Maps SDK for JavaScript 4.29
 
@@ -107,7 +107,7 @@ Vanilla JavaScript (no frameworks)
 
 GeoJSON
 
-## 🗂️ GeoJSON Schema (data/career.geojson)
+###### 🗂️ GeoJSON Schema (data/career.geojson)
 
 Each feature follows this structure:
 {
