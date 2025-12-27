@@ -1,8 +1,16 @@
+/**
+ * 3D Geospatial Portfolio - Luiz Amadeu Coutinho
+ * Optimized for Mobile & Desktop
+ */
+
 let view, visibleFeatures = [], index = -1, tourInterval = null, isFlying = false, animationHandle = null, features = [], layer;
 
 function closeSplash() { 
-    document.getElementById('splash').style.opacity = '0'; 
-    setTimeout(() => document.getElementById('splash').style.display = 'none', 800); 
+    const splash = document.getElementById('splash');
+    if(splash) {
+        splash.style.opacity = '0'; 
+        setTimeout(() => splash.style.display = 'none', 800); 
+    }
 }
 
 require([
@@ -16,7 +24,6 @@ require([
     verticalOffset: { screenLength: 60 }, callout: { type: "line", color: "white", size: 2 }
   });
 
-  // Carregando o arquivo externo da pasta data/
   layer = new GeoJSONLayer({
     url: "data/career.geojson",
     outFields: ["*"], 
@@ -54,7 +61,11 @@ require([
     container: "viewDiv", 
     map: new Map({ basemap: "dark-gray-3d", layers: [layer] }),
     camera: { position: { longitude: -10, latitude: 20, z: 18000000 }, tilt: 0 },
-    popup: { dockEnabled: true, dockOptions: { position: "bottom-right", breakpoint: false } }
+    // Ajuste de popup para mobile: dockEnabled garante que ele não flutue aleatoriamente
+    popup: { 
+        dockEnabled: true, 
+        dockOptions: { position: "bottom-right", breakpoint: false } 
+    }
   });
 
   const rotate = () => { if(!animationHandle) return; const cam = view.camera.clone(); cam.position.longitude -= 0.1; view.camera = cam; animationHandle = requestAnimationFrame(rotate); };
@@ -63,9 +74,29 @@ require([
 
   window.fly = async (i) => {
     if (isFlying || !visibleFeatures[i]) return;
-    isFlying = true; window.stopRot(); index = i;
+    isFlying = true; 
+    window.stopRot(); 
+    index = i;
+    
     const target = visibleFeatures[i];
-    await view.goTo({ position: { longitude: target.geometry.longitude, latitude: target.geometry.latitude - 0.008, z: 1200 }, tilt: 65, heading: 0 }, { duration: 3500 });
+    const isMobile = window.innerWidth <= 768;
+
+    // --- MELHORIA MOBILE: OFFSET DE CÂMERA ---
+    // Se for mobile, apontamos a câmera mais para baixo do ponto (latOffset maior)
+    // para que o ponto suba na tela e saia de trás da sidebar inferior.
+    const latOffset = isMobile ? 0.018 : 0.008; 
+    const zoomLevel = isMobile ? 2000 : 1200;
+
+    await view.goTo({ 
+        position: { 
+            longitude: target.geometry.longitude, 
+            latitude: target.geometry.latitude - latOffset, 
+            z: zoomLevel 
+        }, 
+        tilt: 65, 
+        heading: 0 
+    }, { duration: 3500 });
+
     view.openPopup({ features: [target], updateLocationEnabled: true });
     window.rebuildList();
     isFlying = false;
@@ -87,12 +118,16 @@ require([
   };
 
   window.rebuildList = () => {
-    const list = document.getElementById("list"); list.innerHTML = "";
+    const list = document.getElementById("list"); 
+    if(!list) return;
+    list.innerHTML = "";
     visibleFeatures.forEach((f, i) => {
       const a = f.attributes;
-      const d = document.createElement("div"); d.className = "card" + (i === index ? " active" : "") + (a.career_phase === "Academic" ? " card-academic" : "");
+      const d = document.createElement("div"); 
+      d.className = "card" + (i === index ? " active" : "") + (a.career_phase === "Academic" ? " card-academic" : "");
       d.innerHTML = `<b>${a.company}</b><div class="card-sub"><span>${a.city}</span></div>`;
-      d.onclick = () => { if(tourInterval) window.toggleTour(); window.fly(i); }; list.appendChild(d);
+      d.onclick = () => { if(tourInterval) window.toggleTour(); window.fly(i); }; 
+      list.appendChild(d);
     });
   };
 
