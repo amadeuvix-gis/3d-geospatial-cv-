@@ -1,131 +1,31 @@
-# 3D Geospatial CV – Luiz Amadeu Coutinho
+# 🌍 3D Geospatial Career Portfolio
+### Luiz Amadeu Coutinho | GeoBIM Director & GIS Specialist
 
-An interactive **3D Geospatial Curriculum Vitae** built with **ArcGIS Maps SDK for JavaScript (4.x)**, combining spatial storytelling, globe navigation, and professional experience visualization.
-
-This project showcases advanced usage of **3D GIS**, **GeoJSON-driven content**, and **cinematic camera transitions**, designed as both a **personal portfolio** and a **technical reference**.
-
----
-
-## 🌍 Live Demo
-
-> 🔗 **Live version (GitHub Pages):**  
-> https://SEU_USUARIO.github.io/3d-geospatial-cv/
-
----
-
-## 🎯 Project Concept
-
-The application presents a **global-to-local career journey**, guiding the viewer through:
-
-1. 🌐 Global overview (rotating globe)  
-2. 🌍 Country-level focus  
-3. 🏙️ City-level context  
-4. 📍 Individual professional experiences  
-
-Each experience is spatially anchored and enriched with descriptive content, technology stack, and visual cues.
-
----
-
-## 📁 Project Structure
-
-3d-geospatial-cv/
-│
-├── index.html                # Minimal HTML shell
-│
-├── assets/
-│   ├── Picture1.jpg          # Profile image (splash screen)
-│   └── Luiz_Amadeu_Coutinho_CV.pdf
-│
-├── css/
-│   └── style.css             # Complete UI styling
-│
-├── js/
-│   └── main.js               # Application logic (SceneView, tour, UI)
-│
-├── data/
-│   └── career.geojson        # Professional experiences (editable)
-│
-└── README.md
-
----
+An interactive 3D professional showcase built with **ArcGIS Maps SDK for JavaScript**. This application visualizes a global career journey, integrating spatial data with BIM workflows.
 
 ## 🚀 Features
+- **3D Global Scene:** Dynamic navigation across multiple countries with high-detail urban zooming.
+- **External Data Management:** Uses a standalone `career.geojson` file for easy updates.
+- **Advanced Filtering:** Synchronized filtering between the map and sidebar using SQL-based Definition Expressions.
+- **Auto Tour:** A guided "fly-through" mode covering key professional milestones.
+- **Responsive UI:** Custom dark-mode interface with interactive career cards.
 
-### 🗺️ GIS & 3D
-- ArcGIS **SceneView** with `dark-gray-3d` basemap
-- 3D point symbols with callouts and vertical offsets
-- Career phase–based symbology
-- 3D text labeling
+## 📂 Project Structure
+- `index.html`: Main entry point.
+- `/css`: Styling and layout definitions.
+- `/js`: Core application logic (ES6).
+- `/data`: GeoJSON spatial dataset.
+- `/assets`: Profile photos and downloadable PDF CV.
 
-### 🎥 Storytelling & Navigation
-- Automatic cinematic tour (Play / Stop)
-- Smooth `goTo()` camera transitions
-- Global auto-rotation (idle mode)
-- Reset view to globe overview
+## 🛠️ Tech Stack
+- **Engine:** ArcGIS Maps SDK for JS (v4.29)
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Geodata:** GeoJSON
 
-### 🧭 UI / UX
-- Splash screen introduction
-- Left-side synchronized experience list
-- Active highlight synchronization (map ↔ list)
-- Filters by country and career phase
-- Docked, rich-content popup
-- Download CV (PDF) and LinkedIn links
+## 🔧 How to Run
+1. Clone the repository.
+2. Place your profile image and PDF CV in the `/assets` folder.
+3. Open `index.html` via a local server (e.g., VS Code Live Server) to avoid CORS issues when loading the GeoJSON.
 
-### 🧩 Data Design
-- External GeoJSON for easy customization
-- Ordered timeline using `order` attribute
-- Technology stack rendered as visual chips
-- Academic vs professional visual differentiation
-
----
-
-## 🧱 Technology Stack
-
-- ArcGIS Maps SDK for JavaScript 4.29
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- GeoJSON
-
----
-
-## ▶️ How to Run Locally
-
-Because the app loads external files (GeoJSON), it must be served via a local web server.
-
-### Option 1 — Python
-
-python -m http.server 8000
-
-Open:
-
-http://localhost:8000
-
-### Option 2 — VS Code
-
-- Install Live Server
-- Right-click index.html → Open with Live Server
-
----
-
-## 🌐 Deploy on GitHub Pages
-
-1. Push the repository to GitHub  
-2. Go to Settings → Pages  
-3. Select:
-   - Branch: main  
-   - Folder: / (root)  
-4. Save and wait a few seconds  
-
-Your site will be available at:
-
-https://SEU_USUARIO.github.io/3d-geospatial-cv/
-
----
-
-## 👤 Author
-
-**Luiz Amadeu Coutinho**  
-GeoBIM & Geospatial Consultant  
-
-LinkedIn: https://www.linkedin.com/in/luizamadeucoutinho/
+## 🌐 Live Demo
+Check it out on GitHub Pages: `https://[your-username].github.io/3d-geospatial-cv/`
