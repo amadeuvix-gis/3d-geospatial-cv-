@@ -1,18 +1,17 @@
 let view, visibleFeatures = [], index = -1, tourInterval = null, isFlying = false, animationHandle = null, features = [], layer;
 
-// Global Functions
-window.closeSplash = () => { document.getElementById('splash').style.opacity = '0'; setTimeout(() => document.getElementById('splash').style.display = 'none', 800); };
+// Funções Globais
+window.closeSplash = () => { 
+    document.getElementById('splash').style.opacity = '0'; 
+    setTimeout(() => document.getElementById('splash').style.display = 'none', 800); 
+};
 
 window.toggleSidebar = () => {
     const sidebar = document.getElementById('sidebar');
     const btn = document.getElementById('mobileToggle');
-    if (sidebar.classList.contains('minimized')) {
-        sidebar.classList.remove('minimized');
-        btn.innerHTML = "︾ Minimize List";
-    } else {
-        sidebar.classList.add('minimized');
-        btn.innerHTML = "︽ Maximize List & Filters";
-    }
+    if (!sidebar || !btn) return;
+    sidebar.classList.toggle('minimized');
+    btn.innerHTML = sidebar.classList.contains('minimized') ? "︽ Maximize List & Filters" : "︾ Minimize List";
 };
 
 require([
@@ -27,7 +26,7 @@ require([
   });
 
   layer = new GeoJSONLayer({
-    url: "data/career.geojson",
+    url: "data/career.geojson", // Caminho para o seu arquivo
     outFields: ["*"], elevationInfo: { mode: "relative-to-ground" },
     labelingInfo: [{
       labelPlacement: "above-center", labelExpressionInfo: { expression: "$feature.company" },
@@ -35,7 +34,12 @@ require([
     }],
     renderer: {
       type: "unique-value", field: "career_phase",
-      uniqueValueInfos: [{ value: "Leadership", symbol: createSymbol("#f97316") }, { value: "Consultant", symbol: createSymbol("#22c55e") }, { value: "Technical", symbol: createSymbol("#0ea5e9") }, { value: "Academic", symbol: createSymbol("#a855f7") }]
+      uniqueValueInfos: [
+        { value: "Leadership", symbol: createSymbol("#f97316") }, 
+        { value: "Consultant", symbol: createSymbol("#22c55e") },
+        { value: "Technical", symbol: createSymbol("#0ea5e9") }, 
+        { value: "Academic", symbol: createSymbol("#a855f7") }
+      ]
     },
     popupTemplate: {
       title: "{city}, {country}",
@@ -53,7 +57,8 @@ require([
   });
 
   view = new SceneView({
-    container: "viewDiv", map: new Map({ basemap: "dark-gray-3d", layers: [layer] }),
+    container: "viewDiv", 
+    map: new Map({ basemap: "dark-gray-3d", layers: [layer] }),
     camera: { position: { longitude: -10, latitude: 20, z: 18000000 }, tilt: 0 },
     popup: { dockEnabled: true, dockOptions: { position: "bottom-right", breakpoint: false } }
   });
@@ -70,27 +75,43 @@ require([
 
     if (isMobile) {
         const sidebar = document.getElementById('sidebar');
-        if (!sidebar.classList.contains('minimized')) window.toggleSidebar();
+        if (sidebar && !sidebar.classList.contains('minimized')) window.toggleSidebar();
     }
 
     const latOffset = isMobile ? 0.025 : 0.008; 
     await view.goTo({ position: { longitude: target.geometry.longitude, latitude: target.geometry.latitude - latOffset, z: 1200 }, tilt: 65, heading: 0 }, { duration: 3500 });
     view.openPopup({ features: [target], updateLocationEnabled: true });
-    window.rebuildList(); isFlying = false;
+    window.rebuildList(); 
+    isFlying = false;
   };
 
   window.toggleTour = () => {
-    if (tourInterval) { clearInterval(tourInterval); tourInterval = null; document.getElementById("tourBtn").textContent = "▶ Play Auto Tour"; document.getElementById("tourBtn").classList.remove("active-tour"); }
-    else { document.getElementById("tourBtn").textContent = "■ Stop Tour"; document.getElementById("tourBtn").classList.add("active-tour"); let tourIdx = (index === -1) ? 0 : index; const step = () => { if (!tourInterval) return; window.fly(tourIdx); tourIdx = (tourIdx + 1) % visibleFeatures.length; }; step(); tourInterval = setInterval(step, 8000); }
+    const tourBtn = document.getElementById("tourBtn");
+    if (tourInterval) { 
+        clearInterval(tourInterval); tourInterval = null; 
+        tourBtn.textContent = "▶ Play Auto Tour"; 
+        tourBtn.classList.remove("active-tour"); 
+    } else { 
+        tourBtn.textContent = "■ Stop Tour"; 
+        tourBtn.classList.add("active-tour"); 
+        let tourIdx = (index === -1) ? 0 : index; 
+        const step = () => { if (!tourInterval) return; window.fly(tourIdx); tourIdx = (tourIdx + 1) % visibleFeatures.length; };
+        step(); 
+        tourInterval = setInterval(step, 8000); 
+    }
   };
 
   window.rebuildList = () => {
-    const list = document.getElementById("list"); list.innerHTML = "";
+    const list = document.getElementById("list"); 
+    if(!list) return;
+    list.innerHTML = "";
     visibleFeatures.forEach((f, i) => {
       const a = f.attributes;
-      const d = document.createElement("div"); d.className = "card" + (i === index ? " active" : "") + (a.career_phase === "Academic" ? " card-academic" : "");
+      const d = document.createElement("div"); 
+      d.className = "card" + (i === index ? " active" : "") + (a.career_phase === "Academic" ? " card-academic" : "");
       d.innerHTML = `<b>${a.company}</b><div class="card-sub"><span>${a.city}</span></div>`;
-      d.onclick = () => { if(tourInterval) window.toggleTour(); window.fly(i); }; list.appendChild(d);
+      d.onclick = () => { if(tourInterval) window.toggleTour(); window.fly(i); }; 
+      list.appendChild(d);
     });
   };
 
@@ -109,16 +130,23 @@ require([
     view.ui.add(new Expand({ view, content: new BasemapGallery({ view }), expandIconClass: "esri-icon-basemap", group: "top-right" }), "top-right");
     view.ui.add(new Expand({ view, content: new Daylight({ view }), expandIconClass: "esri-icon-sunny", group: "top-right" }), "top-right");
     view.ui.add(new Expand({ view, content: new DirectLineMeasurement3D({ view }), expandIconClass: "esri-icon-measure-line", group: "top-right" }), "top-right");
+
     layer.queryFeatures().then(res => {
       features = res.features.sort((a,b) => (a.attributes.order || 0) - (b.attributes.order || 0));
       visibleFeatures = [...features];
       const cf = document.getElementById("countryFilter");
-      [...new Set(features.map(f => f.attributes.country))].sort().forEach(c => { const o = document.createElement("option"); o.value = o.textContent = c; cf.appendChild(o); });
+      [...new Set(features.map(f => f.attributes.country))].sort().forEach(c => {
+        const o = document.createElement("option"); o.value = o.textContent = c; cf.appendChild(o);
+      });
       window.rebuildList(); window.startRot();
-    });
+    }).catch(err => console.error("Error loading GeoJSON data:", err));
   });
 
   document.getElementById("countryFilter").onchange = window.applyFilters;
   document.getElementById("phaseFilter").onchange = window.applyFilters;
-  document.getElementById("resetBtn").onclick = () => { if(tourInterval) window.toggleTour(); view.goTo({ position: { longitude: -10, latitude: 20, z: 18000000 }, tilt: 0, heading: 0 }, { duration: 3000 }).then(() => { window.startRot(); index = -1; window.rebuildList(); }); };
+  document.getElementById("resetBtn").onclick = () => { 
+    if(tourInterval) window.toggleTour(); 
+    view.goTo({ position: { longitude: -10, latitude: 20, z: 18000000 }, tilt: 0, heading: 0 }, { duration: 3000 })
+    .then(() => { window.startRot(); index = -1; window.rebuildList(); });
+  };
 });
