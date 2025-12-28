@@ -63,10 +63,28 @@ label { font-size: 11px; color: #94a3b8; display: block; margin: 10px 0 4px; tex
 .chip-wrap { display: flex; flex-wrap: wrap; gap: 4px; }
 .chip { font-size: 9px; padding: 2px 6px; border-radius: 4px; background: #0f172a; border: 1px solid #334155; color: #38bdf8; }
 
-/* DAYLIGHT ICON FIX */
-.esri-icon-sunny { 
+/* RECUPERAÇÃO DO ÍCONE DE SOL (SVG ORIGINAL) */
+.esri-icon-sunny::before {
+    content: "" !important; /* Remove o caractere de fonte padrão */
+}
+
+.esri-icon-sunny, 
+.esri-daylight__time-slider-button .esri-icon-sunny,
+.esri-expand__icon--expanded .esri-icon-sunny { 
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFD700'%3E%3Cpath d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z'/%3E%3C/svg%3E") !important; 
-    background-size: 18px !important; background-repeat: no-repeat !important; background-position: center !important;
+    background-size: 20px !important; 
+    background-repeat: no-repeat !important; 
+    background-position: center !important;
+    width: 24px !important;
+    height: 24px !important;
+    display: inline-block !important;
+}
+
+/* Garante que o ícone apareça dentro do botão de Expand */
+.esri-expand__icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 #mobileToggle { display: none; }
@@ -80,3 +98,4 @@ label { font-size: 11px; color: #94a3b8; display: block; margin: 10px 0 4px; tex
     .esri-ui-bottom-right { bottom: 40% !important; }
     .esri-popup--docked-bottom-right .esri-popup__main-container { max-height: 25vh !important; margin-bottom: 40vh !important; }
 }
+
