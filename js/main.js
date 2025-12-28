@@ -26,7 +26,7 @@ require([
   });
 
   layer = new GeoJSONLayer({
-    url: "data/career.geojson", // Caminho para o seu arquivo
+    url: "data/career.geojson", // geojson folder path
     outFields: ["*"], elevationInfo: { mode: "relative-to-ground" },
     labelingInfo: [{
       labelPlacement: "above-center", labelExpressionInfo: { expression: "$feature.company" },
@@ -128,7 +128,12 @@ require([
 
   view.when(() => {
     view.ui.add(new Expand({ view, content: new BasemapGallery({ view }), expandIconClass: "esri-icon-basemap", group: "top-right" }), "top-right");
-    view.ui.add(new Expand({ view, content: new Daylight({ view }), expandIconClass: "esri-icon-sunny", group: "top-right" }), "top-right");
+    view.ui.add(new Expand({ 
+    view, 
+    content: new Daylight({ view }), 
+    expandIconClass: "esri-icon-sunny", // Este ID deve bater com o CSS acima
+    group: "top-right" 
+}), "top-right");
     view.ui.add(new Expand({ view, content: new DirectLineMeasurement3D({ view }), expandIconClass: "esri-icon-measure-line", group: "top-right" }), "top-right");
 
     layer.queryFeatures().then(res => {
@@ -150,3 +155,4 @@ require([
     .then(() => { window.startRot(); index = -1; window.rebuildList(); });
   };
 });
+
