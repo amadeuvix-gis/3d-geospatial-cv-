@@ -1,5 +1,5 @@
 # 🗺️ 3D Geospatial Career Portfolio
-### Interactive GeoBIM & GIS Showcase | Luiz Amadeu Coutinho
+### Interactive  GIS Showcase | Luiz Amadeu Coutinho
 
 This project is a high-fidelity 3D geospatial application built with the **ArcGIS Maps SDK for JavaScript**. It serves as an interactive curriculum vitae, visualizing over 20 years of global experience in GIS, GeoBIM, and Reality Capture across Brazil, USA, Portugal, Angola, South Africa, and Ireland.
 
